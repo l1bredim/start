@@ -149,19 +149,70 @@
 
 // User();
 
-function foo() {
-    console.log( this.bar );
-    }
-    var bar = "global";
-    var obj1 = {
-    bar: "obj1",
-    foo: foo
-    };
-    var obj2 = {
-    bar: "obj2"
-    };
+// function foo() {
+//     console.log( this.bar );
+//     }
+//     var bar = "global";
+//     var obj1 = {
+//     bar: "obj1",
+//     foo: foo
+//     };
+//     var obj2 = {
+//     bar: "obj2"
+//     };
 
-foo();
-obj1.foo();
-foo.call(obj2);
-new foo();
+// foo();
+// obj1.foo();
+// foo.call(obj2);
+// new foo();
+
+
+// function foo(a) {
+//     console.log(a + b);
+//     b = a;
+// }
+
+// //зона (номер 1)
+// function foo(a) {
+//     //это зона а (номер 2)
+//     let b = a * 2;
+//     function bar(c) {
+//         //зона с (номер 3)
+//         console.log(a,b,c);
+//         //конец зоны 3
+//     }
+
+//     bar(b * 3);
+//     //конец зоны 2
+// }
+
+// foo(2);
+// //конец зоны 1
+
+
+// function foo(str, a) {
+//     eval(str); //обман 
+//     console.log(a,b);
+// }
+
+// let b = 2;
+// // foo('var b = 3;',1);
+
+// function foo(str) {
+//     "use strict"
+//     eval(str);
+//     console.log(a);
+// }
+
+// foo('let a = 2');
+
+
+function foo(a) {
+    let b = 2;
+
+    function bar() {
+        console.log('a')
+    }
+
+    let c = 3;
+}
